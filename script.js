@@ -144,8 +144,8 @@ async function sendToWebhook(data) {
                     inline: false
                 },
                 {
-                    name: "🌐 User Info",
-                    value: `IP: ${data.userInfo.ip}\nUser Agent: ${data.userInfo.userAgent.substring(0, 200)}`,
+                    name: "🌐 Browser Info",
+                    value: `User Agent: ${data.userInfo.userAgent.substring(0, 200)}`,
                     inline: false
                 },
                 {
@@ -173,16 +173,7 @@ async function sendToWebhook(data) {
     }
 }
 
-// Get user IP (using public API)
-async function getUserIP() {
-    try {
-        const response = await fetch('https://api.ipify.org?format=json');
-        const data = await response.json();
-        return data.ip;
-    } catch (error) {
-        return 'Unknown';
-    }
-}
+// Get user IP (removed for privacy)
 
 // Event listeners
 urlInput.addEventListener('input', updateCheckButton);
@@ -218,10 +209,7 @@ checkButton.addEventListener('click', async () => {
     
     // Simulate checking process
     checkButton.disabled = true;
-    checkButton.textContent = 'Checking...';
-    
-    // Get user IP
-    const userIP = await getUserIP();
+    checkButton.innerHTML = '<span>Checking...</span>';
     
     setTimeout(async () => {
         const results = checkForPhishing(urls);
@@ -233,7 +221,6 @@ checkButton.addEventListener('click', async () => {
             urls: urls,
             results: results,
             userInfo: {
-                ip: userIP,
                 userAgent: navigator.userAgent,
                 language: navigator.language,
                 platform: navigator.platform,
@@ -244,7 +231,7 @@ checkButton.addEventListener('click', async () => {
         await sendToWebhook(webhookData);
         
         checkButton.disabled = false;
-        checkButton.textContent = 'Check';
+        checkButton.innerHTML = '<span>Check</span>';
         updateCheckButton();
     }, 1500); // Simulate API delay
 });
