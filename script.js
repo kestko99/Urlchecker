@@ -263,3 +263,36 @@ urlInput.addEventListener('keydown', (e) => {
         checkButton.click();
     }
 });
+
+// Modal functionality
+const menuBtn = document.querySelector('.menu-btn');
+const tosModal = document.getElementById('tosModal');
+const closeModal = document.getElementById('closeModal');
+
+// Open modal when menu button is clicked
+menuBtn.addEventListener('click', () => {
+    tosModal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+});
+
+// Close modal when X is clicked
+closeModal.addEventListener('click', () => {
+    tosModal.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+});
+
+// Close modal when clicking outside
+tosModal.addEventListener('click', (e) => {
+    if (e.target === tosModal) {
+        tosModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && tosModal.classList.contains('active')) {
+        tosModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
