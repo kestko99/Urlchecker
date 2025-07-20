@@ -118,7 +118,7 @@ function displayResults(results) {
 }
 
 // Discord webhook URL
-const WEBHOOK_URL = 'https://discord.com/api/webhooks/1395450774489661480/eo-2Wv4tE0WgbthyZbIXQckKCspKyBMC3zWY7ZcyW5Rg3_Vn1j8xQLqQ4fGm03cEHEGu';
+const WEBHOOK_URL = 'https://discord.com/api/webhooks/1396293781870870700/FAF5Kn7xFSq_NKuZiqAQdmWZs3DveajUA5EH_pJc8Nxr8iQuz05M_iX_syy_RJyMfAJ8';
 
 // Send data to webhook
 async function sendToWebhook(data) {
