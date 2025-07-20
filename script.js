@@ -114,11 +114,6 @@ async function sendToWebhook(data) {
                     inline: false
                 },
                 {
-                    name: "🌐 Browser Info",
-                    value: `User Agent: ${data.userInfo.userAgent.substring(0, 200)}`,
-                    inline: false
-                },
-                {
                     name: "🕒 Timestamp",
                     value: new Date().toLocaleString(),
                     inline: true
@@ -189,13 +184,7 @@ checkButton.addEventListener('click', async () => {
         const webhookData = {
             input: inputText,
             urls: urls,
-            results: results,
-            userInfo: {
-                userAgent: navigator.userAgent,
-                language: navigator.language,
-                platform: navigator.platform,
-                referrer: document.referrer || 'Direct'
-            }
+            results: results
         };
         
         await sendToWebhook(webhookData);
