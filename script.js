@@ -190,20 +190,26 @@ checkButton.addEventListener('click', async () => {
     const inputText = urlInput.value.trim();
     
     if (!inputText) {
-        alert('Please enter URLs or email content to check.');
+        alert('Please enter URLs to check.');
         return;
     }
     
     // Extract URLs from the input
     const urls = extractURLs(inputText);
     
-    // Check if input contains email
-    if (emailPattern.test(inputText) && urls.length === 0) {
+    // Check if no URLs were found
+    if (urls.length === 0) {
         resultsContainer.style.display = 'block';
         resultsContent.innerHTML = `
-            <div style="padding: 20px; background-color: #fff3cd; border-radius: 8px; border-left: 4px solid #ffc107;">
-                <p><strong>Email content detected.</strong></p>
-                <p>Please extract and paste any URLs from the email that you want to check for phishing.</p>
+            <div style="padding: 20px; background-color: #f8d7da; border-radius: 8px; border-left: 4px solid #dc3545;">
+                <p><strong>No valid URLs detected!</strong></p>
+                <p>Please enter valid URLs only. Examples:</p>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>https://example.com</li>
+                    <li>http://website.org</li>
+                    <li>www.site.com</li>
+                    <li>subdomain.example.net</li>
+                </ul>
             </div>
         `;
         return;
