@@ -6,8 +6,8 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #000000;
+    color: #ffffff;
     line-height: 1.6;
 }
 
@@ -16,16 +16,17 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #000000;
+    box-shadow: 0 2px 4px rgba(255,255,255,0.1);
 }
 
 .navbar {
-    background-color: #2196F3;
+    background-color: #111111;
     padding: 0 20px;
     height: 60px;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #333;
 }
 
 .nav-container {
@@ -93,10 +94,11 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: white;
+    background-color: #111111;
     border-radius: 12px;
     padding: 40px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(255,255,255,0.08);
+    border: 1px solid #333;
 }
 
 /* Breadcrumb Styles */
@@ -109,7 +111,7 @@ body {
 }
 
 .breadcrumb-link {
-    color: #666;
+    color: #888;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -118,15 +120,15 @@ body {
 .home-icon {
     width: 20px;
     height: 20px;
-    color: #666;
+    color: #888;
 }
 
 .breadcrumb-separator {
-    color: #999;
+    color: #666;
 }
 
 .breadcrumb-current {
-    color: #333;
+    color: #ccc;
     font-weight: 500;
 }
 
@@ -134,14 +136,14 @@ body {
 .page-title {
     font-size: 36px;
     font-weight: 700;
-    color: #2196F3;
+    color: #ffffff;
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .page-description {
     font-size: 18px;
-    color: #666;
+    color: #aaa;
     margin-bottom: 40px;
     line-height: 1.6;
 }
@@ -157,22 +159,24 @@ body {
 .url-input {
     width: 100%;
     padding: 20px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #444;
     border-radius: 8px;
     font-size: 16px;
     font-family: inherit;
     resize: vertical;
     min-height: 200px;
     transition: border-color 0.3s ease;
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 
 .url-input:focus {
     outline: none;
-    border-color: #2196F3;
+    border-color: #666;
 }
 
 .url-input::placeholder {
-    color: #999;
+    color: #666;
 }
 
 /* reCAPTCHA Styles */
@@ -231,8 +235,8 @@ body {
 
 /* Check Button */
 .check-button {
-    background-color: #2196F3;
-    color: white;
+    background-color: #ffffff;
+    color: #000000;
     border: none;
     padding: 16px 48px;
     font-size: 18px;
@@ -246,13 +250,14 @@ body {
 }
 
 .check-button:hover:not(:disabled) {
-    background-color: #1976D2;
+    background-color: #cccccc;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
 
 .check-button:disabled {
-    background-color: #ccc;
+    background-color: #333;
+    color: #666;
     cursor: not-allowed;
     transform: none;
 }
@@ -261,21 +266,23 @@ body {
 .results-container {
     margin-top: 40px;
     padding: 30px;
-    background-color: #f5f5f5;
+    background-color: #1a1a1a;
     border-radius: 8px;
     animation: fadeIn 0.5s ease;
+    border: 1px solid #333;
 }
 
 .results-title {
     font-size: 24px;
     font-weight: 600;
-    color: #2196F3;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
 .results-content {
     font-size: 16px;
     line-height: 1.6;
+    color: #ccc;
 }
 
 /* Status Classes */
@@ -316,21 +323,22 @@ body {
 .about-title {
     font-size: 32px;
     font-weight: 700;
-    color: #2196F3;
+    color: #ffffff;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .about-content {
-    background-color: white;
+    background-color: #111111;
     border-radius: 12px;
     padding: 40px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(255,255,255,0.08);
+    border: 1px solid #333;
 }
 
 .about-content > p {
     font-size: 18px;
-    color: #666;
+    color: #aaa;
     text-align: center;
     margin-bottom: 40px;
     line-height: 1.6;
@@ -346,14 +354,15 @@ body {
 .feature-card {
     text-align: center;
     padding: 30px 20px;
-    background-color: #f8f9fa;
+    background-color: #1a1a1a;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #333;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(255,255,255,0.1);
 }
 
 .feature-icon {
@@ -364,25 +373,25 @@ body {
 .feature-card h3 {
     font-size: 20px;
     font-weight: 600;
-    color: #2196F3;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
 .feature-card p {
     font-size: 14px;
-    color: #666;
+    color: #aaa;
     line-height: 1.5;
 }
 
 .about-footer {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #333;
 }
 
 .about-footer p {
     font-size: 16px;
-    color: #555;
+    color: #aaa;
 }
 
 /* Modal Styles */
@@ -405,7 +414,7 @@ body {
 }
 
 .modal-content {
-    background-color: white;
+    background-color: #111111;
     border-radius: 12px;
     max-width: 800px;
     width: 90%;
@@ -413,6 +422,7 @@ body {
     overflow-y: auto;
     position: relative;
     animation: modalSlideIn 0.3s ease;
+    border: 1px solid #333;
 }
 
 .modal-header {
@@ -420,17 +430,17 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #333;
     position: sticky;
     top: 0;
-    background-color: white;
+    background-color: #111111;
     z-index: 10;
 }
 
 .modal-header h2 {
     font-size: 28px;
     font-weight: 700;
-    color: #2196F3;
+    color: #ffffff;
     margin: 0;
 }
 
@@ -438,7 +448,7 @@ body {
     background: none;
     border: none;
     font-size: 36px;
-    color: #999;
+    color: #666;
     cursor: pointer;
     width: 40px;
     height: 40px;
@@ -450,8 +460,8 @@ body {
 }
 
 .modal-close:hover {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #222;
+    color: #fff;
 }
 
 .modal-body {
@@ -461,7 +471,7 @@ body {
 .modal-body h3 {
     font-size: 20px;
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
     margin-top: 25px;
     margin-bottom: 15px;
 }
@@ -472,7 +482,7 @@ body {
 
 .modal-body p {
     font-size: 16px;
-    color: #555;
+    color: #aaa;
     line-height: 1.6;
     margin-bottom: 15px;
 }
@@ -484,7 +494,7 @@ body {
 
 .modal-body li {
     font-size: 16px;
-    color: #555;
+    color: #aaa;
     line-height: 1.6;
     margin-bottom: 8px;
 }
@@ -492,9 +502,9 @@ body {
 .last-updated {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #333;
     font-style: italic;
-    color: #999;
+    color: #666;
     font-size: 14px;
 }
 

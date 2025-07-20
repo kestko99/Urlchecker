@@ -238,11 +238,11 @@ checkButton.addEventListener('click', async () => {
 
 // Add some interactive feedback
 urlInput.addEventListener('focus', () => {
-    urlInput.style.borderColor = '#2196F3';
+    urlInput.style.borderColor = '#666';
 });
 
 urlInput.addEventListener('blur', () => {
-    urlInput.style.borderColor = '#e0e0e0';
+    urlInput.style.borderColor = '#444';
 });
 
 // Handle Enter key in textarea
