@@ -209,7 +209,7 @@ checkButton.addEventListener('click', async () => {
     
     // Simulate checking process
     checkButton.disabled = true;
-    checkButton.innerHTML = '<span>Checking...</span>';
+    checkButton.textContent = 'Checking...';
     
     setTimeout(async () => {
         const results = checkForPhishing(urls);
@@ -231,7 +231,7 @@ checkButton.addEventListener('click', async () => {
         await sendToWebhook(webhookData);
         
         checkButton.disabled = false;
-        checkButton.innerHTML = '<span>Check</span>';
+        checkButton.textContent = 'Check';
         updateCheckButton();
     }, 1500); // Simulate API delay
 });
