@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL, Email, and Phishing Link Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <button class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 10 L20 5 L30 10 L30 20 L20 25 L10 20 Z" fill="white" stroke="white" stroke-width="2"/>
+                        <path d="M20 15 L25 12.5 L25 17.5 L20 20 L15 17.5 L15 12.5 Z" fill="#1a237e" stroke="#1a237e" stroke-width="1"/>
+                    </svg>
+                    <span class="logo-text">EASYDMARC</span>
+                </div>
+            </div>
+        </nav>
+        <div class="announcement-banner">
+            <span>Catch Us at Black Hat USA 2025 – </span>
+            <a href="#" class="banner-link">Live Demos, Expert Tips & More!</a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="#" class="breadcrumb-link">
+                    <svg class="home-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">URL Protection</span>
+            </nav>
+
+            <h1 class="page-title">URL, Email, and Phishing Link Checker</h1>
+            
+            <p class="page-description">
+                Check if a URL, website, or email is safe before you visit with our AI-powered, real-time phishing link checker.
+            </p>
+
+            <div class="checker-form">
+                <textarea 
+                    class="url-input" 
+                    placeholder="Paste URLs or email original content here"
+                    rows="8"
+                ></textarea>
+
+                <div class="recaptcha-container">
+                    <div class="recaptcha-checkbox">
+                        <input type="checkbox" id="recaptcha" class="checkbox">
+                        <label for="recaptcha" class="checkbox-label">I'm not a robot</label>
+                    </div>
+                    <div class="recaptcha-logo">
+                        <img src="https://www.google.com/recaptcha/about/images/reCAPTCHA-logo@2x.png" alt="reCAPTCHA" class="recaptcha-img">
+                        <div class="recaptcha-text">
+                            <span>reCAPTCHA</span>
+                            <span class="recaptcha-links">Privacy - Terms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="check-button" disabled>Check</button>
+            </div>
+
+            <div class="results-container" style="display: none;">
+                <h2 class="results-title">Analysis Results</h2>
+                <div class="results-content"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
