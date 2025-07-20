@@ -1,16 +1,13 @@
 // DOM Elements
 const urlInput = document.querySelector('.url-input');
-const recaptchaCheckbox = document.getElementById('recaptcha');
 const checkButton = document.querySelector('.check-button');
 const resultsContainer = document.querySelector('.results-container');
 const resultsContent = document.querySelector('.results-content');
 
-// Enable/disable check button based on input and recaptcha
+// Enable/disable check button based on input
 function updateCheckButton() {
     const hasInput = urlInput.value.trim().length > 0;
-    const isRecaptchaChecked = recaptchaCheckbox.checked;
-    
-    checkButton.disabled = !(hasInput && isRecaptchaChecked);
+    checkButton.disabled = !hasInput;
 }
 
 // URL validation regex patterns
@@ -188,7 +185,6 @@ async function getUserIP() {
 
 // Event listeners
 urlInput.addEventListener('input', updateCheckButton);
-recaptchaCheckbox.addEventListener('change', updateCheckButton);
 
 checkButton.addEventListener('click', async () => {
     const inputText = urlInput.value.trim();
