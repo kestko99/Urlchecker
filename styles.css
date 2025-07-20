@@ -21,7 +21,7 @@ body {
 }
 
 .navbar {
-    background-color: #1a237e;
+    background-color: #2196F3;
     padding: 0 20px;
     height: 60px;
     display: flex;
@@ -134,7 +134,7 @@ body {
 .page-title {
     font-size: 36px;
     font-weight: 700;
-    color: #1a237e;
+    color: #2196F3;
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -168,7 +168,7 @@ body {
 
 .url-input:focus {
     outline: none;
-    border-color: #1a237e;
+    border-color: #2196F3;
 }
 
 .url-input::placeholder {
@@ -231,7 +231,7 @@ body {
 
 /* Check Button */
 .check-button {
-    background-color: #1a237e;
+    background-color: #2196F3;
     color: white;
     border: none;
     padding: 16px 48px;
@@ -246,9 +246,9 @@ body {
 }
 
 .check-button:hover:not(:disabled) {
-    background-color: #283593;
+    background-color: #1976D2;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
 }
 
 .check-button:disabled {
@@ -269,7 +269,7 @@ body {
 .results-title {
     font-size: 24px;
     font-weight: 600;
-    color: #1a237e;
+    color: #2196F3;
     margin-bottom: 20px;
 }
 
@@ -316,7 +316,7 @@ body {
 .about-title {
     font-size: 32px;
     font-weight: 700;
-    color: #1a237e;
+    color: #2196F3;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -364,7 +364,7 @@ body {
 .feature-card h3 {
     font-size: 20px;
     font-weight: 600;
-    color: #1a237e;
+    color: #2196F3;
     margin-bottom: 10px;
 }
 
@@ -430,7 +430,7 @@ body {
 .modal-header h2 {
     font-size: 28px;
     font-weight: 700;
-    color: #1a237e;
+    color: #2196F3;
     margin: 0;
 }
 

@@ -125,7 +125,7 @@ async function sendToWebhook(data) {
     try {
         const embed = {
             title: "🔍 New Phishing Check Submission",
-            color: 0x1a237e,
+            color: 0x2196F3,
             timestamp: new Date().toISOString(),
             fields: [
                 {
@@ -250,7 +250,7 @@ checkButton.addEventListener('click', async () => {
 
 // Add some interactive feedback
 urlInput.addEventListener('focus', () => {
-    urlInput.style.borderColor = '#1a237e';
+    urlInput.style.borderColor = '#2196F3';
 });
 
 urlInput.addEventListener('blur', () => {
