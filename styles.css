@@ -86,7 +86,7 @@ body {
 
 /* Main Content Styles */
 .main-content {
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 60px);
     padding: 40px 20px;
 }
 
