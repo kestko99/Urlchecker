@@ -6,25 +6,9 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+    background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
-    position: relative;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(120, 200, 255, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 120, 200, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(120, 255, 200, 0.3) 0%, transparent 50%);
-    z-index: -1;
 }
 
 /* Header Styles */
@@ -37,10 +21,7 @@ body::before {
 }
 
 .navbar {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #2196F3;
     padding: 0 20px;
     height: 60px;
     display: flex;
@@ -112,15 +93,10 @@ body::before {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 24px;
+    background-color: white;
+    border-radius: 12px;
     padding: 40px;
-    box-shadow: 
-        0 8px 32px rgba(31, 38, 135, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* Breadcrumb Styles */
@@ -181,23 +157,18 @@ body::before {
 .url-input {
     width: 100%;
     padding: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
     font-size: 16px;
     font-family: inherit;
     resize: vertical;
     min-height: 200px;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease;
 }
 
 .url-input:focus {
     outline: none;
-    border-color: #764ba2;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.1);
+    border-color: #2196F3;
 }
 
 .url-input::placeholder {
@@ -260,45 +231,24 @@ body::before {
 
 /* Check Button */
 .check-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: #2196F3;
     color: white;
     border: none;
     padding: 16px 48px;
     font-size: 18px;
     font-weight: 600;
-    border-radius: 50px;
+    border-radius: 8px;
     cursor: pointer;
     align-self: center;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
-}
-
-.check-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    transition: left 0.5s ease;
-}
-
-.check-button:hover:not(:disabled)::before {
-    left: 0;
 }
 
 .check-button:hover:not(:disabled) {
+    background-color: #1976D2;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(118, 75, 162, 0.4);
-}
-
-.check-button span {
-    position: relative;
-    z-index: 1;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
 }
 
 .check-button:disabled {
