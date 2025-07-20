@@ -73,9 +73,9 @@ function displayResults(results) {
     
     html += '</div>';
     html += `
-        <div style="margin-top: 30px; padding: 20px; background-color: #e3f2fd; border-radius: 8px;">
-            <h3 style="margin-bottom: 10px; color: #1976d2;">Security Tips:</h3>
-            <ul style="margin-left: 20px; color: #555;">
+        <div style="margin-top: 30px; padding: 20px; background-color: #1a1a1a; border-radius: 8px; border: 1px solid #333;">
+            <h3 style="margin-bottom: 10px; color: #ffffff;">Security Tips:</h3>
+            <ul style="margin-left: 20px; color: #aaa;">
                 <li>Always verify the domain name carefully</li>
                 <li>Look for HTTPS and valid SSL certificates</li>
                 <li>Be cautious of shortened URLs</li>
