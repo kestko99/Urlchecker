@@ -80,7 +80,6 @@ function displayResults(results) {
                 <li>Look for HTTPS and valid SSL certificates</li>
                 <li>Be cautious of shortened URLs</li>
                 <li>Check for misspellings in familiar domain names</li>
-                <li>Never enter sensitive information on suspicious sites</li>
             </ul>
         </div>
     `;
